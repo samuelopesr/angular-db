@@ -1,0 +1,8 @@
+<section class="container-fluid col " style="background-color: #343A40; color: white;">
+    <div *ngIf="auth.error" class="justify-content-center" style="color: red;">  {{ auth.error }}</div>
+
+    <div *ngIf="auth.user" class="row justify-content-center mt-2 mr-2">
+        <p>Logged as <strong>{{ auth.user.email }}</strong></p>
+        <button (click)="auth.signOut()" routerLink="/init" type="submit" class="btn btn-primary  ml-4" style="height: 30px; padding-top: 2px; "> Sair </button>
+      </div>
+</section>

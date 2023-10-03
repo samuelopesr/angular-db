@@ -1,0 +1,12 @@
+<section class="container-fluid">
+   <div class="general card mt-2" *ngFor="let contato of contatos | async">
+       <div class="card-body">
+            <h5 class="card-title"> {{ contato.nome }} </h5>
+            <p class="card-text">{{ contato.telefone }}</p>
+       </div>
+       <div class="card-footer">
+        <button class="btn btn-default" (click)="edit(contato, contato.key)">Editar</button>
+        <button class="btn btn-danger" (click)="delete(contato.key)">Del</button>
+       </div>
+   </div>
+</section>
