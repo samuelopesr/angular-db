@@ -4,6 +4,7 @@ import { InitComponent } from './init/init.component';
 import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageKanbamComponent } from './pages/page-kanbam/page-kanbam.component';
 import { PageUsersComponent } from './pages/page-users/page-users.component';
+import { EditComponent } from './contatos/edit/edit.component';
 
 const routes: Routes = [
   {

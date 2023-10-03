@@ -9,9 +9,9 @@
           <label for="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" [(ngModel)]="password" id="exampleInputPassword1" placeholder="Password" name="password">
         </div>
-        <a routerLink="/users" (click)="auth.emailSignIn(this.email, this.password)" type="submit" class="btn btn-primary">Login With e-mail </a>
+        <a routerLink="/home" (click)="auth.emailSignIn(this.email, this.password)" type="submit" class="btn btn-primary">Login With e-mail </a>
 
-        <button (click)="auth.googleProvider()" type="submit" class="btn btn-primary ml-4">Login With google </button>
+        <button (click)="auth.googleProvider()" routerLink="/users" type="submit" class="btn btn-primary ml-4">Login With google </button>
       </form>  
       
       <!-- <div *ngIf="auth.error" style="color: red;">  {{ auth.error }}</div>

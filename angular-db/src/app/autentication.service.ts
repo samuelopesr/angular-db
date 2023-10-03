@@ -3,8 +3,6 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { GoogleAuthProvider } from '@angular/fire/auth'
 
 
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -12,14 +10,18 @@ export class AutenticationService {
   user: any;
   error: any;
 
-  constructor(public autentication: AngularFireAuth) {}
+  constructor(public autentication: AngularFireAuth) {
+
+  }
 
     async emailSignIn(email:string, password:string) {
       try
-      {
-        const credential = this.autentication.signInWithEmailAndPassword(email, password)
+      { 
 
+        const credential = this.autentication.signInWithEmailAndPassword(email, password)
         this.user = (await credential).user
+
+
       } catch (error)
       {
           this.error = error;
@@ -42,6 +44,8 @@ export class AutenticationService {
       await this.autentication.signOut();
       this.user = null;
       }
+
+      
     
   }
 

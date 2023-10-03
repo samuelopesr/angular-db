@@ -6,60 +6,49 @@
     <h3> Sign a new user at table</h3>
     <div class="name input-group mb-3">
       <div class="input-group-prepend">
-        <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+        <span class="input-group-text">Name</span>
       </div>
-      <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+      <input type="text" [(ngModel)]="forNewName" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
       </div>
 
       <div class="name input-group mb-3">
         <div class="input-group-prepend">
-          <span class="input-group-text" id="inputGroup-sizing-default">Age</span>
+          <span class="input-group-text">Age</span>
         </div>
-        <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        <input type="number" [(ngModel)]="forNewAge" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
         </div>
 
-        <button type="button" class="btn btn-outline-primary">Add new user</button>
+        <button type="button" (click)="addItem()" class="btn btn-outline-primary">Add new user</button>
       
   </div>
 
     <table class="table">
-        <thead>
+       
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">E-mail</th>
             <th scope="col">Nome</th>
-            <th scope="col">Idade</th>
-            <th scope="col"> <button type="button" class="btn btn-outline-primary">Remove</button></th>
+            <th scope="col">Age</th>
+            <th scope="col">Email</th>
+            <th scope="col">Remove</th>
+         </tr>
+       
+        
+          <tr *ngFor="let item of list | async">       
+            <td> {{ item.name }} </td>
+            <td> {{ item.age }}</td>
+            <td> {{ item.email }}</td> 
+            <td>
+              <button type="button" (click)="deleteItem(item.key)" class="btn btn-outline-primary">Remove</button>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row"></th>
-            <td></td>
-            
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td></td>
-            
-          </tr>
-          <tr>
-            <th scope="row"></th>
-            <td></td>
-           
-          </tr>
-        </tbody>
+     
       </table>
 
   
-      <div *ngIf="auth.error" style="color: red;">  {{ auth.error }}</div>
+      <!-- <div *ngIf="auth.error" style="color: red;">  {{ auth.error }}</div>
 
       <div *ngIf="auth.user">
         <p>Logged as <strong>{{ auth.user.email }}</strong></p>
         <button (click)="auth.signOut()" routerLink="/init" type="submit" class="btn btn-primary ml-4"> Sair </button>
-      </div>
+      </div> -->
       
-
-      
-
 </section>
