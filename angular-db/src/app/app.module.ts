@@ -20,6 +20,19 @@ import { PageOutComponent } from './pages/page-out/page-out.component';
 import { SectionTaskComponent } from './pages/page-kanbam/section-task/section-task.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card'
+import { DragDropModule } from '@angular/cdk/drag-drop'
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { SectionTaskDialogComponent } from './pages/page-kanbam/section-task-dialog/section-task-dialog.component'
+import { MatDialogModule } from '@angular/material/dialog'
+import { MatInputModule } from '@angular/material/input'
+import { MatButtonModule } from '@angular/material/button';
+import { CreateUserComponent } from './pages/create-user/create-user.component'
+import { provideFirestore } from '@angular/fire/firestore';
+import { getFirestore } from 'firebase/firestore';
+import { ContatoDataService } from './shared/contato-data.service';
+import { ContatoService } from './shared/contato.service';
+
 
 @NgModule({
   declarations: [
@@ -35,8 +48,16 @@ import { MatCardModule } from '@angular/material/card'
     ListComponent,
     PageOutComponent,
     SectionTaskComponent,
+    SectionTaskDialogComponent,
+    CreateUserComponent
   ],
   imports: [
+    MatButtonModule,
+    MatInputModule,
+    MatDialogModule,
+    MatIconModule,
+    MatToolbarModule,
+    DragDropModule,
     MatCardModule,
     BrowserModule,
     AppRoutingModule,
@@ -53,9 +74,11 @@ import { MatCardModule } from '@angular/material/card'
       appId: "1:110678222634:web:2c8100e2d252e1808e6053",
       measurementId: "G-7YREJKBEY8" 
     }),
+    provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
   ],
-  providers: [AutenticationService],
+  providers: [AutenticationService, ContatoDataService, ContatoService],
+  
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,5 +1,14 @@
+
 <section class="container-wrapper container-fluid">
-    <!-- <div class="general container">
+
+    <div class="content-wrapper mt-2">
+        <button (click)="newTask()" mat-button>
+            <mat-icon>add</mat-icon>
+             Add a new card
+        </button>
+    </div>
+
+    <div class="backlog container">
         <h2> Backlog </h2>
 
         <mat-card
@@ -7,12 +16,59 @@
         id="todo"
         #todoList="cdkDropList"
         [cdkDropListData]="todo"
-
+        [cdkDropListConnectedTo]="[doneList, inProgressList]"
+        (cdkDropListDropped)="drop($event)"
         class="list">
+        <p class="empty-label" *ngIf="todo.length === 0">Empty List</p>
+        <app-section-task 
+        (edit)="editTask('todo', $event)" 
+        *ngFor="let task of todo" 
+        cdkDrag [task]="task">
+        </app-section-task>
+        </mat-card>
+    </div>
+
+
+    <div class="inProgress container">
+        <h2> In Progress </h2>
+
+        <mat-card
+        cdkDropList
+        id="inProgress"
+        #inProgressList="cdkDropList"
+        [cdkDropListData]="inProgress"
+        [cdkDropListConnectedTo]="[todoList, doneList]"
+        (cdkDropListDropped)="drop($event)"
+        class="list">
+        <p class="empty-label" *ngIf="inProgress.length === 0">Empty List</p>
+        <app-section-task
+        (edit)="editTask('inProgress',$event)"
+        *ngFor="let task of inProgress" 
+        cdkDrag [task]="task">
+        </app-section-task>
 
         </mat-card>
+    </div>
 
-        <h2> In Progress </h2>
+
+    <div class="done container">
         <h2> Done </h2>
-    </div> -->
+        <mat-card
+        cdkDropList
+        id="done"
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[todoList, inProgressList]"
+        (cdkDropListDropped)="drop($event)"
+        class="list">
+        <p class="empty-label" *ngIf="done.length === 0">Empty List</p>
+        <app-section-task
+        (edit)="editTask('done',$event)"
+        *ngFor="let task of done" 
+        cdkDrag
+         [task]="task"
+        >
+        </app-section-task>
+        </mat-card>
+    </div>
 </section>

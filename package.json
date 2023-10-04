@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@angular/cdk": "^16.2.6",
+    "@angular/fire": "^7.6.1"
+  }
+}

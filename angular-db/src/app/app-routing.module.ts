@@ -5,12 +5,17 @@ import { PageHomeComponent } from './pages/page-home/page-home.component';
 import { PageKanbamComponent } from './pages/page-kanbam/page-kanbam.component';
 import { PageUsersComponent } from './pages/page-users/page-users.component';
 import { EditComponent } from './contatos/edit/edit.component';
+import { CreateUserComponent } from './pages/create-user/create-user.component';
 
 const routes: Routes = [
   {
     path: '',
     redirectTo: '/init',
     pathMatch: 'full'
+  },
+  {
+    path: 'createUser',
+    component: CreateUserComponent
   },
   {
     path: 'init',
