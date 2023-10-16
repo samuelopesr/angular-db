@@ -6,6 +6,8 @@ import { PageKanbamComponent } from './pages/page-kanbam/page-kanbam.component';
 import { PageUsersComponent } from './pages/page-users/page-users.component';
 import { EditComponent } from './contatos/edit/edit.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
+import { PageLearnComponent } from './pages/page-learn/page-learn.component';
+import { PagePraticaComponent } from './pages/page-pratica/page-pratica.component';
 
 const routes: Routes = [
   {
@@ -18,8 +20,16 @@ const routes: Routes = [
     component: CreateUserComponent
   },
   {
+    path: 'pratica',
+    component: PagePraticaComponent
+  },
+  {
     path: 'init',
     component: InitComponent
+  },
+  {
+    path: 'learn',
+    component: PageLearnComponent
   },
   {
     path: 'home',

@@ -1,0 +1,31 @@
+<section class="container-fluid">
+    <h2> Informations about {{ reciveNome }} {{ reciveSobreNome }} </h2>
+    <h3>You can also change the current values</h3>
+    <table border="2px">
+        <tr class="m-3" style="font-weight: bolder; width: 50%; text-align: center;">
+            <td> Nome </td>
+            <td> Sobrenome </td>
+            <td> CPF </td>
+            <td> Company </td>
+            <td> Bank Account </td>
+            <td> ID </td>
+            <td> Phone Number </td>
+            <td> Email </td>
+        </tr>
+        <tr class="m-3" style="text-align: center;">
+            <td (click)="changeValue('reciveNome')"> {{reciveNome}} </td>
+            <td (click)="changeValue('reciveSobreNome')"> {{reciveSobreNome}} </td>
+            <td (click)="changeValue('reciveCpf')"> {{reciveCpf}} </td>
+            <td (click)="changeValue('reciveCompany')"> {{reciveCompany}} </td>
+            <td (click)="changeValue('reciveBankAccount')"> {{reciveBankAccount}} </td>
+            <td (click)="changeValue('reciveId')"> {{reciveId}} </td>
+            <td (click)="changeValue('recivePhoneNum')"> {{recivePhoneNum}} </td>
+            <td (click)="changeValue('reciveEmail')"> {{reciveEmail}} </td>
+        </tr>
+
+    </table>
+
+    <strong>
+        {{ test | json }}
+    </strong>
+</section>

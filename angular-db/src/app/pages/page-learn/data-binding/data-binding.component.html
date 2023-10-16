@@ -1,0 +1,77 @@
+<section class="mt-5">
+    <h1 class="display-1"> Interpolation </h1>
+
+    <p class="h3"> {{ name }} tem {{ age }} anos! </p>
+
+    <p class="h3"> 1 - {{ name }} tem mais de 28 anos?</p>
+
+    <p class="h3 bg-primary"> {{ age > 28 }} </p>
+
+    <p class="h3"> 2 - quanto é {{ age }} + 1? </p>
+
+    <p class="h3 bg-primary"> {{ age + 1 }} </p>
+</section>
+
+<hr>
+
+<section>
+    <h1 class="h1"> Propriety Binding </h1>
+
+    <button mat-raised-button color="primary" [disabled]="checkedDisable"> Press </button>
+
+    <br>
+
+    <img class="mt-5" [src]="imgSrc" [title]="imgTitle">
+</section>
+
+<hr>
+
+<section>
+    <h1 class="display-1"> Event Binding </h1>
+
+    <button mat-raised-button color="primary" (click)="alerta($event)"> Event </button>
+
+
+    <div
+    [(ngModel)]="box"
+    (dragover)="dragover($event)"
+    (drop)="drop($event)"
+    (mousemove)="mouseMoveTest($event)" 
+    class="bg-primary mt-5" style="width: 380px; height: 380px; border: 1px solid black;">
+    <h1> Mouse condinates </h1>
+    </div>
+
+    <h2>cordinates here</h2>
+
+    <strong>{{ position.x }}
+    -
+    {{ position.y }}</strong>
+
+
+<div class="mt-3" [draggable]="true" (drag)="drag($event)" (dragstart)="dragstart($event)" (dragend)="dragend($event)" style="background-color: brown;  width: 280px; height: 280px;">
+    <h1>Drag and Drop</h1>
+</div>
+
+
+<div
+#boxElement
+(mouseenter)="mouseenter(boxElement)"
+(mouseleave)="mouseleave(boxElement)"
+(dragover)="dragover($event)"
+(drop)="drop($event)"
+class="mt-4" style="width: 380px; height: 380px; background-color: #007BFF;">
+<h1>Mouse enter and mouse leave</h1>
+</div>
+
+<br>
+<h1>Drawing here</h1>
+<canvas
+#canvas
+(mouseup)="mouseUpDraw($event)"
+(mousedown)=mouseDownDraw($event)
+(mousemove)="mouseMoveDraw($event)"
+style="border: 1px solid black; margin-top: 2%;"
+width="560" 
+height="360">
+</canvas>
+</section>

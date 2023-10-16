@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AutenticationService } from 'src/app/autentication.service';
+
 import { Contato } from 'src/app/shared/contato';
 import { ContatoDataService } from 'src/app/shared/contato-data.service';
 import { ContatoService } from 'src/app/shared/contato.service';

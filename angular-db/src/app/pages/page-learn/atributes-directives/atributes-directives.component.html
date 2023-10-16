@@ -1,0 +1,59 @@
+<section>
+<ng-content select="h1"></ng-content>
+    <h1 
+    [ngClass]="{'active': valor, 'disable': !valor}">
+    Ng class
+    </h1>
+
+    <hr style="border: 1px dashed black;"> 
+
+    <h1 [ngStyle]="{'height': height, 'width': width, 'background': back}"> Ng Style </h1>
+
+    <hr style="border: 1px dashed black;">
+
+    <h1> ngModel</h1>
+
+    <input [(ngModel)]="nome">
+
+    <button mat-raised-button color="accent" (click)="salvar()">
+        Salvar
+    </button>
+
+    <li *ngFor="let item of list">
+        {{ item.nome }}
+    </li>
+
+
+    <hr style="border: 1px dashed black;">
+
+    <h1>Ng template</h1>
+
+    <ng-template ngFor let-item [ngForOf]="list">
+        <p>
+            {{ item.nome }}
+        </p>
+    </ng-template>
+
+
+    <hr style="border: 1px dashed black;">
+
+    <h1> Ng content </h1>
+    <ng-content select="p"></ng-content>
+
+    <hr style="border: 1px dashed black;">
+
+    <h1> Pipes | </h1>
+
+
+    <input [(ngModel)]="nome">
+
+    <button mat-raised-button color="warn" (click)="salvar()">
+        Pipe
+    </button>
+
+    <li *ngFor="let item of list">
+        {{ item.nome | uppercase}}
+    </li>
+    <br>
+    {{ date | date: 'dd/MM/yyyy' }}
+</section>

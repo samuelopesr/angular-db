@@ -1,0 +1,123 @@
+<section>
+  
+  <h1>{{ title }}</h1>
+
+
+<button
+(click)="seeValue = true" 
+mat-raised-button 
+color="accent"> 
+See values 
+</button>
+
+<div *ngIf="seeValue === true">
+    <mat-form-field class="m-3">
+      <mat-label> Increment </mat-label>
+      <input [(ngModel)]="nInc" matInput placeholder="Digite a number" />
+    </mat-form-field>
+    <mat-form-field class="m-3">
+      <mat-label> Decrement </mat-label>
+      <input
+        color="warn"
+        [(ngModel)]="hInc"
+        matInput
+        placeholder="Digite a number"
+      />
+    </mat-form-field>
+
+    <button
+    (click)="seeValue = false" 
+    mat-raised-button 
+    color="accent"> 
+    Hide values 
+    </button>
+</div>
+
+  <br />
+
+  <button class="m-3" (click)="increment()" mat-raised-button color="primary">
+    Click to increment ++
+  </button>
+
+  <br />
+
+  <button class="m-3" (click)="unIncrement()" mat-raised-button color="warn">
+    Click to decrement --
+  </button>
+
+  <br />
+
+  <mat-progress-bar class="m-5 w-50 rounded" mode="determinate" [value]="nInc">
+  </mat-progress-bar>
+
+  <mat-progress-bar
+    [value]="hInc"
+    color="warn"
+    class="m-5 w-50 rounded"
+    mode="determinate"
+  >
+  </mat-progress-bar>
+
+  <hr />
+</section>
+
+<h1> {{ title2 }} </h1>
+
+<mat-form-field>
+  <mat-label> Write any value </mat-label>
+  <input [(ngModel)]="newText" matInput />
+</mat-form-field>
+
+<button (click)="publicValue()" mat-raised-button color="accent">
+  Public value
+</button>
+<div *ngFor="let text of texts">
+  <mat-card>
+    <mat-card-header>
+      <div mat-card-avatar style="background-color: blue"></div>
+      <mat-card-title>Value you digited</mat-card-title>
+      <mat-card-subtitle> {{ texts }} </mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+        <app-two *ngIf="click === true" [text]="text"></app-two>
+    </mat-card-content>
+
+    <mat-card-actions>
+        <button (click)="remover(text)" mat-button>REMOVE</button>
+      </mat-card-actions>
+  </mat-card>
+</div>
+
+<h1> {{ title3 }} </h1>
+
+<button 
+(click)="add()"
+mat-raised-button 
+color="primary" > 
+  Add
+</button>
+
+<span class="h3 m-3"> 
+  {{ valor }} 
+</span>
+
+<br>
+<div class="mt-5">
+  
+  <h1 class="h1"> {{ txt }} </h1>
+
+  <app-one *ngIf="destroy"></app-one>
+  
+  <button
+  mat-raised-button
+  color="accent"
+  (click)="destroyComponent()"
+  >
+    Destroy a component
+  </button>
+</div>
+
+<app-data-binding></app-data-binding>
+<app-two-binding></app-two-binding>
+<app-directives></app-directives>

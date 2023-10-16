@@ -32,6 +32,20 @@ import { provideFirestore } from '@angular/fire/firestore';
 import { getFirestore } from 'firebase/firestore';
 import { ContatoDataService } from './shared/contato-data.service';
 import { ContatoService } from './shared/contato.service';
+import { PageLearnComponent } from './pages/page-learn/page-learn.component';
+import { MatProgressBarModule } from '@angular/material/progress-bar'
+import { MatSliderModule } from '@angular/material/slider'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { OneComponent } from './pages/page-learn/one/one.component';
+import { TwoComponent } from './pages/page-learn/two/two.component';
+import { DataBindingComponent } from './pages/page-learn/data-binding/data-binding.component';
+import { TwoBindingComponent } from './pages/page-learn/two-binding/two-binding.component';
+import { DirectivesComponent } from './pages/page-learn/directives/directives.component';
+import { AtributesDirectivesComponent } from './pages/page-learn/atributes-directives/atributes-directives.component';
+import { PagePraticaComponent } from './pages/page-pratica/page-pratica.component';
+import { ChildComponent } from './pages/page-pratica/child/child.component';
+import { NgMetodsExComponent } from './pages/page-pratica/ng-metods-ex/ng-metods-ex.component';
+import { MetodChildComponent } from './pages/page-pratica/ng-metods-ex/metod-child/metod-child.component'
 
 
 @NgModule({
@@ -49,9 +63,23 @@ import { ContatoService } from './shared/contato.service';
     PageOutComponent,
     SectionTaskComponent,
     SectionTaskDialogComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    PageLearnComponent,
+    OneComponent,
+    TwoComponent,
+    DataBindingComponent,
+    TwoBindingComponent,
+    DirectivesComponent,
+    AtributesDirectivesComponent,
+    PagePraticaComponent,
+    ChildComponent,
+    NgMetodsExComponent,
+    MetodChildComponent
   ],
   imports: [
+    MatFormFieldModule,
+    MatSliderModule,
+    MatProgressBarModule,
     MatButtonModule,
     MatInputModule,
     MatDialogModule,

@@ -1,0 +1,84 @@
+<section class="mt-5">
+    <h1 class="h1">Directives</h1>
+    <h2> Ng if </h2>
+
+    div is here
+    <p *ngIf="condition; else elseBlock">
+        True
+    </p>
+
+    <ng-template #elseBlock>
+        <p>
+            False
+        </p>
+    </ng-template>
+
+    <p *ngIf="conditionClick">
+        True
+    </p>
+
+    <p *ngIf="!conditionClick">
+        False
+    </p>
+
+    <button
+    (click)="onClick()" 
+    mat-raised-button 
+    color="primary">
+    Click here
+    </button>
+
+
+    <hr style="border: 1px dashed black;">
+
+    <h1> Ng For </h1>
+
+    <ul>
+        <li 
+        *ngFor="let item of list; let i = index"
+        (click)="onClickEventList(i)"
+        >
+           [{{ i }}]  - {{ item.nome }} - idade = {{ item.age }}
+        </li>
+    </ul>
+
+
+    <button
+    (click)="onClickAddList()" 
+    mat-raised-button 
+    color="primary">
+    Add new
+    </button>
+
+    <hr style="border: 1px dashed black;">
+
+    <h1>Ng switch</h1>
+
+    <input type="text" [(ngModel)]="nome">
+
+    <div [ngSwitch]="nome">
+
+        <p *ngSwitchCase="'Samuel'"> Samuel 
+        </p>
+
+        <p *ngSwitchCase="'Zé'">
+        Zé
+        </p>
+
+        <p *ngSwitchCase="'Noraland'">
+        Noraland
+        </p>
+
+        <p *ngSwitchDefault>
+            Wrong Search
+        </p>
+
+    </div>
+
+    <hr style="border: 1px dashed black;">
+
+    <app-atributes-directives>
+        <h1>Aulas de diretivas</h1>
+        <p>Exemplo de ng-content, entre "Aulas de diretivas" e esse parágrafo</p>
+    </app-atributes-directives>
+</section>

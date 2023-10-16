@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, SimpleChanges, Input } from '@angular/core';
 
 @Component({
   selector: 'app-page-home',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./page-home.component.scss']
 })
 export class PageHomeComponent {
-
+    
 }

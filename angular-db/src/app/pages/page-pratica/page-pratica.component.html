@@ -1,0 +1,111 @@
+<section class="container-fluid">
+  <h1>Practice Section</h1>
+
+<div class="data" *ngFor="let info of infos">
+    <form>
+      <ng-template [ngIf]="next === 1">
+        <mat-form-field>
+          <mat-label> Your name </mat-label>
+          <input matInput name="nome" [(ngModel)]="info.nome"
+          />
+        </mat-form-field>
+      </ng-template>
+  
+      <ng-template [ngIf]="next === 2">
+        <mat-form-field>
+          <mat-label> Your surname </mat-label>
+          <input matInput name="surname" [(ngModel)]="info.sobrenome" />
+        </mat-form-field>
+      </ng-template>
+  
+      <ng-template [ngIf]="next === 3">
+        <mat-form-field>
+          <mat-label> Your CPF </mat-label>
+          <input matInput name="cpf" [(ngModel)]="info.cpf"
+          ngModel
+           />
+        </mat-form-field>
+      </ng-template>
+  
+      <ng-template [ngIf]="next === 4">
+        <mat-form-field>
+          <mat-label> Company you work </mat-label>
+          <input name="company" [(ngModel)]="info.company" matInput />
+        </mat-form-field>
+      </ng-template>
+  
+      <ng-template [ngIf]="next === 5">
+        <mat-form-field>
+          <mat-label> Your main bank account </mat-label>
+          <input matInput name="bankaccount" [(ngModel)]="info.bankaccount" />
+        </mat-form-field>
+      </ng-template>
+  
+      <ng-template [ngIf]="next === 6">
+        <mat-form-field>
+          <mat-label> Digite your ID </mat-label>
+          <input name="id" [(ngModel)]="info.id" matInput />
+        </mat-form-field>
+      </ng-template>
+  
+      <ng-template [ngIf]="next === 7">
+        <mat-form-field>
+          <mat-label> Digite your phone number </mat-label>
+          <input name="phonenumber" [(ngModel)]="info.phonenumber" matInput />
+        </mat-form-field>
+      </ng-template>
+  
+      <ng-template [ngIf]="next === 8">
+        <mat-form-field>
+          <mat-label> Digite your email </mat-label>
+          <input name="email" [(ngModel)]="info.email" matInput />
+        </mat-form-field>
+      </ng-template>
+
+  
+      <button
+      *ngIf="next < 10"
+        type="submit"
+        (click)="nextStep()"
+        mat-fab
+        color="primary"
+      >
+        <mat-icon *ngIf="next !== 9"> 
+          arrow_right_alt 
+        </mat-icon>
+        <ng-template [ngIf]="next === 9"> 
+          <mat-icon> done </mat-icon> 
+        </ng-template>
+      </button>
+  
+      <button type="button" *ngIf="next !== 1 && next < 10" (click)="backStep()" mat-fab color="primary">
+        <mat-icon> arrow_left_alt </mat-icon>
+      </button>
+  
+    </form>
+
+    <app-child
+    *ngIf="next === 10"
+      [reciveNome]="info.nome"
+      [reciveSobreNome]="info.sobrenome"
+      [reciveCpf]="info.cpf"
+      [reciveCompany]="info.company"
+      [reciveBankAccount]="info.bankaccount"
+      [reciveId]="info.id"
+      [recivePhoneNum]="info.phonenumber"
+      [reciveEmail]="info.email"
+    >
+    </app-child>
+</div>
+
+
+  <strong>
+   next/back step - {{ next }}
+    <br />
+    {{ infos | json }}
+  </strong>
+
+  <ng-template #err>
+    <h1 style="color: red">An error had ocurr</h1>
+  </ng-template>
+</section>
