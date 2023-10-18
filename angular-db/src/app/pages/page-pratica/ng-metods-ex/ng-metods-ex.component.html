@@ -1,1 +1,29 @@
-<p>ng-metods-ex works!</p>
+<section class="container-fluid">
+  <h1>{{ title }}</h1>
+  <p>
+    <mat-form-field>
+      <mat-label> Write a message </mat-label>
+      <input matInput type="text" [(ngModel)]="message" />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <mat-label> Digite a code </mat-label>
+      <input matInput type="text" [(ngModel)]="code" />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <mat-label> Digite a name </mat-label>
+      <input matInput type="text" [(ngModel)]="name" />
+    </mat-form-field>
+  </p>
+
+  <button mat-raised-button (click)="updateCostumer()" color="primary">Update</button>
+
+  <app-metod-child [message]="message" [costumer]="costumer"></app-metod-child>
+  
+  {{ costumer | json }}
+</section>
