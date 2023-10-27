@@ -4,7 +4,17 @@
         Message: {{ message }}
     </p>
     <p>
+        Costumer code: {{ costumer.code }}
+    </p>
+    <p>
         Costumer Name: {{ costumer.name }}
     </p>
+
+    <h1> List of changeLog </h1>
+    <ul *ngFor="let log of changelog">
+        <li *ngIf="log.startsWith('message: ')">
+            {{ log }}
+        </li>
+    </ul>
 </section>
    

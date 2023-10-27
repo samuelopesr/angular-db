@@ -69,7 +69,7 @@ export class PagePraticaComponent implements OnInit, OnChanges, OnDestroy, DoChe
     console.log("ngDoCheck");
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log(changes);
+    console.log("daddy changes: " + changes);
   }
   ngOnInit(): void {
     this.next++

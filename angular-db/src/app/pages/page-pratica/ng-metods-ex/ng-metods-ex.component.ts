@@ -15,11 +15,15 @@ export class NgMetodsExComponent {
   code: number;
 
   public updateCostumer()
-  {
+  { 
+
     this.costumer.name = this.name
     this.costumer.code = this.code
-    console.log(this.costumer);
+    console.log(this.costumer); 
     
+    this.message = ""
+    this.name = ""
+    this.code = 0
   }
 
 }
