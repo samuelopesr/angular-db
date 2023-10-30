@@ -48,7 +48,8 @@ import { NgMetodsExComponent } from './pages/page-pratica/ng-metods-ex/ng-metods
 import { MetodChildComponent } from './pages/page-pratica/ng-metods-ex/metod-child/metod-child.component';
 import { DoCheckExComponent } from './pages/page-pratica/ng-metods-ex/do-check-ex/do-check-ex.component';
 import { ContentAndViewComponent } from './pages/page-pratica/ng-metods-ex/content-and-view/content-and-view.component';
-import { ParentComponent } from './pages/page-pratica/ng-metods-ex/content-and-view/parent/parent.component'
+import { ParentComponent } from './pages/page-pratica/ng-metods-ex/content-and-view/parent/parent.component';
+import { StructuralDirectivesComponent } from './pages/page-pratica/ng-metods-ex/structural-directives/structural-directives.component'
 
 
 
@@ -81,7 +82,8 @@ import { ParentComponent } from './pages/page-pratica/ng-metods-ex/content-and-v
     MetodChildComponent,
     DoCheckExComponent,
     ContentAndViewComponent,
-    ParentComponent
+    ParentComponent,
+    StructuralDirectivesComponent
   ],
   imports: [
     MatFormFieldModule,
