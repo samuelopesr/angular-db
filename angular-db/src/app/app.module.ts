@@ -45,7 +45,11 @@ import { AtributesDirectivesComponent } from './pages/page-learn/atributes-direc
 import { PagePraticaComponent } from './pages/page-pratica/page-pratica.component';
 import { ChildComponent } from './pages/page-pratica/child/child.component';
 import { NgMetodsExComponent } from './pages/page-pratica/ng-metods-ex/ng-metods-ex.component';
-import { MetodChildComponent } from './pages/page-pratica/ng-metods-ex/metod-child/metod-child.component'
+import { MetodChildComponent } from './pages/page-pratica/ng-metods-ex/metod-child/metod-child.component';
+import { DoCheckExComponent } from './pages/page-pratica/ng-metods-ex/do-check-ex/do-check-ex.component';
+import { ContentAndViewComponent } from './pages/page-pratica/ng-metods-ex/content-and-view/content-and-view.component';
+import { ParentComponent } from './pages/page-pratica/ng-metods-ex/content-and-view/parent/parent.component'
+
 
 
 @NgModule({
@@ -74,7 +78,10 @@ import { MetodChildComponent } from './pages/page-pratica/ng-metods-ex/metod-chi
     PagePraticaComponent,
     ChildComponent,
     NgMetodsExComponent,
-    MetodChildComponent
+    MetodChildComponent,
+    DoCheckExComponent,
+    ContentAndViewComponent,
+    ParentComponent
   ],
   imports: [
     MatFormFieldModule,

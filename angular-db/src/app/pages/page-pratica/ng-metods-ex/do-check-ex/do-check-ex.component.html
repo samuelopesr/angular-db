@@ -1,0 +1,37 @@
+<section class="container-fluid">
+    <mat-form-field>
+        <mat-label> Your item </mat-label>
+        <input [(ngModel)]="item" matInput>
+    </mat-form-field>
+    <button (click)="addItem()" mat-flat-button color="primary">
+        add Item
+    </button>
+
+    <div *ngFor="let item of items">
+        {{ item }}
+    </div>
+    <div>
+        {{ message }}
+    </div>
+
+
+    <mat-form-field>
+        <mat-label> Your item </mat-label>
+        <input [(ngModel)]="newValue" matInput>
+    </mat-form-field>
+
+    <button
+    (click)="addValue()"
+    mat-raised-button
+    >
+    add a string value
+    </button>
+
+    <div>
+        {{ value }}
+    </div>
+
+    <div>
+        {{ messageVal }}
+    </div>
+</section>

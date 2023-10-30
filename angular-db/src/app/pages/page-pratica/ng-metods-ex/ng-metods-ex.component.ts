@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { Costumer } from 'src/app/shared/costumer';
 
 @Component({
@@ -6,7 +6,9 @@ import { Costumer } from 'src/app/shared/costumer';
   templateUrl: './ng-metods-ex.component.html',
   styleUrls: ['./ng-metods-ex.component.scss']
 })
-export class NgMetodsExComponent {
+export class NgMetodsExComponent implements DoCheck {
+  ngDoCheck(): void {    
+  }
 
   title: string = "More Study about Ng Metods";
   message: string = "";

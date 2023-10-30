@@ -51,7 +51,6 @@ export class PagePraticaComponent implements OnInit, OnChanges, OnDestroy, DoChe
 
   ngAfterContentChecked(): void {
     console.log("ngAfterContentChecked", this.infos);
-    
   }
   ngAfterViewInit(): void {
     console.log("ngAfterViewInit");
@@ -66,7 +65,7 @@ export class PagePraticaComponent implements OnInit, OnChanges, OnDestroy, DoChe
     console.log("ngOnDestroy");
   }
   ngDoCheck(): void {
-    console.log("ngDoCheck");
+    console.log("Parent ngDoCheck");
   }
   ngOnChanges(changes: SimpleChanges): void {
     console.log("daddy changes: " + changes);

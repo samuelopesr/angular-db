@@ -10,6 +10,10 @@
         Costumer Name: {{ costumer.name }}
     </p>
 
+    <p>
+        Do check count {{ DoCheckCount }}
+    </p>
+
     <h1> List of changeLog </h1>
     <ul *ngFor="let log of changelog">
         <li *ngIf="log.startsWith('message: ')">
