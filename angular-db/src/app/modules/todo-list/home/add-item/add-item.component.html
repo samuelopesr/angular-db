@@ -1,0 +1,13 @@
+<mat-form-field>
+  <mat-label> Add your item </mat-label>
+  <input name="todoItem" [(ngModel)]="todoItem" matInput placeholder="Ex. Do the dishes" />
+</mat-form-field>
+
+<button 
+(click)="method(todoItem)"
+mat-raised-button type="submit" color="primary">
+  Send Data
+</button>
+
+
+

@@ -1,1 +1,36 @@
-<p>structural-directives works!</p>
+<p> {{ cdate() }} </p>
+
+<p> {{ cinput.value}} </p>
+
+<select #cinput (input)="0">
+    <option value="milo">milo</option>
+    <option value="coke">coke</option>
+    <option value="fanta">fanta</option>
+</select>
+
+
+<img [src]="url" alt="alteration">
+<br>
+<br>
+<tr>
+    <td [colSpan]="1 + 1"> Tres quatro </td>
+</tr>
+
+<br>
+<button
+[style.font-size]="fontSize"
+[disabled]="disable"
+>
+IT'S A BUTTON
+</button>
+
+<br>
+
+<h1 [style.font-size]="fontSize" [style.color]="color" [style.opacity]="opacity" > TESTTING SOME FETURES </h1>
+
+<h1 [ngStyle]="styles" > TESTTING SOME FETURES </h1>
+
+<h1 [class]="valentines" > TESTTING SOME FETURES </h1>
+
+<app-twb-child [(size)]="font"></app-twb-child>
+<div [style.font-size.px]="font">Resizable Text</div>

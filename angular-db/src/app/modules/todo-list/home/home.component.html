@@ -1,0 +1,4 @@
+<app-header></app-header>
+<app-todo [getItems]="todoList"></app-todo>
+<app-add-item (item)="setData($event)"></app-add-item>
+<app-delete-all></app-delete-all>

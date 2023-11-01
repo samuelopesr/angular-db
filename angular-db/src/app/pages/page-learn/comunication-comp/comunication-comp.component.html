@@ -1,0 +1,13 @@
+<h1>Comunicação entre componentes</h1>
+<app-input [contador]="addValue"></app-input>
+<button mat-raised-button color="primary" (click)="add()"> add</button>
+
+<ng-template [ngIf]="getDados">
+    <h1>{{ getDados.nome }}</h1>
+    <h2>{{ getDados.idade }}</h2>
+</ng-template>
+
+<app-output (publishData)="setData($event)"></app-output>
+
+<app-food-list></app-food-list>
+

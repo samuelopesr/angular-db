@@ -49,7 +49,13 @@ import { MetodChildComponent } from './pages/page-pratica/ng-metods-ex/metod-chi
 import { DoCheckExComponent } from './pages/page-pratica/ng-metods-ex/do-check-ex/do-check-ex.component';
 import { ContentAndViewComponent } from './pages/page-pratica/ng-metods-ex/content-and-view/content-and-view.component';
 import { ParentComponent } from './pages/page-pratica/ng-metods-ex/content-and-view/parent/parent.component';
-import { StructuralDirectivesComponent } from './pages/page-pratica/ng-metods-ex/structural-directives/structural-directives.component'
+import { StructuralDirectivesComponent } from './pages/page-pratica/ng-metods-ex/structural-directives/structural-directives.component';
+import { TwbChildComponent } from './pages/page-pratica/ng-metods-ex/structural-directives/twb-child/twb-child.component';
+import { ShareModule } from './shared/share/share.module';
+import { ComunicationCompComponent } from './pages/page-learn/comunication-comp/comunication-comp.component';
+import { TodoListModule } from './modules/todo-list/todo-list.module';
+
+
 
 
 
@@ -83,9 +89,11 @@ import { StructuralDirectivesComponent } from './pages/page-pratica/ng-metods-ex
     DoCheckExComponent,
     ContentAndViewComponent,
     ParentComponent,
-    StructuralDirectivesComponent
+    StructuralDirectivesComponent,
+    TwbChildComponent,
+    ComunicationCompComponent,
   ],
-  imports: [
+  imports: [//importação de funcionalidades de outro componente
     MatFormFieldModule,
     MatSliderModule,
     MatProgressBarModule,
@@ -113,9 +121,12 @@ import { StructuralDirectivesComponent } from './pages/page-pratica/ng-metods-ex
     }),
     provideFirestore(() => getFirestore()),
     BrowserAnimationsModule,
+    ShareModule,
+    TodoListModule
   ],
-  providers: [AutenticationService, ContatoDataService, ContatoService],
+  providers: [AutenticationService, ContatoDataService, ContatoService], //requisição externa/backend da aplicação
   
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent],//inicialização do nosso modulo
+  exports: [PageLearnComponent] //exporta o meu componente
 })
 export class AppModule {}

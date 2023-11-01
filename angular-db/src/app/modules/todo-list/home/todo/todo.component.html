@@ -1,0 +1,9 @@
+<section>
+    <!-- <img [src]="imgUrl" width=20%> -->
+    <li *ngFor="let i of getItems">
+       <input 
+       #check 
+       (click)="checked(check, secondElement)"
+       type="checkbox"> <span #secondElement>{{ i }}</span>
+    </li>
+</section>

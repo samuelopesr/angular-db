@@ -10,6 +10,8 @@ import { PageLearnComponent } from './pages/page-learn/page-learn.component';
 import { PagePraticaComponent } from './pages/page-pratica/page-pratica.component';
 import { NgMetodsExComponent } from './pages/page-pratica/ng-metods-ex/ng-metods-ex.component';
 import { ContentAndViewComponent } from './pages/page-pratica/ng-metods-ex/content-and-view/content-and-view.component';
+import { InputComponent } from './shared/share/input/input.component';
+import { HomeComponent } from './modules/todo-list/home/home.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,10 @@ const routes: Routes = [
   {
     path: 'createUser',
     component: CreateUserComponent
+  },
+  {
+    path: 'todoList',
+    component: HomeComponent
   },
   {
     path: 'contentView',
