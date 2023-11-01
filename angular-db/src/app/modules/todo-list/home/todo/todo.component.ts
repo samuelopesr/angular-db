@@ -11,12 +11,25 @@ export class TodoComponent {
 
   @Input() public getItems: string[] = []
 
-  public checked(element: HTMLInputElement, secondElement: HTMLElement)
+
+  public delete(item: any)
   {
-    if(element.checked === true)
+    const index = this.getItems.indexOf(item)
+
+    if(index !== item)
+    {
+      this.getItems.splice(index,1);
+    }
+  }
+
+  public checked(element: HTMLInputElement, secondElement: HTMLElement, index: any)
+  {
+    if(element.checked)
     {
       secondElement.style.textDecorationLine = "line-through"
-    }if(element.checked === false){
+      this.getItems.push(this.getItems.splice(index,1)[0])
+
+    }else{
       secondElement.style.textDecorationLine = "none"
     }
   }

@@ -1,9 +1,17 @@
 <section>
     <!-- <img [src]="imgUrl" width=20%> -->
-    <li *ngFor="let i of getItems">
-       <input 
-       #check 
-       (click)="checked(check, secondElement)"
-       type="checkbox"> <span #secondElement>{{ i }}</span>
+    <li *ngFor="let i of getItems; let pi = index">
+        ({{pi}})
+        <input #check (click)="checked(check, secondElement, pi)" type="checkbox"> <span #secondElement>{{ i }}</span>
+
+        <mat-icon 
+        (click)="delete(pi)"
+        aria-hidden="false" 
+        aria-label="Example delete icon" 
+        fontIcon="delete"
+        style="cursor: pointer;">
+        </mat-icon>
+
     </li>
+    
 </section>
