@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-delete-all',
@@ -6,5 +6,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./delete-all.component.scss']
 })
 export class DeleteAllComponent {
+  @Input() public getList: string[] = []
 
+  delete()
+  {
+    this.getList.splice(0, this.getList.length)
+
+  localStorage.clear()    
+  }
 }

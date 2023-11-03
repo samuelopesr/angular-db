@@ -1,36 +1,78 @@
-import { Component, Input } from '@angular/core';
+import { Component, DoCheck, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.scss']
+  styleUrls: ['./todo.component.scss'],
 })
-export class TodoComponent {
+export class TodoComponent implements OnInit, DoCheck {
+  ngDoCheck(): void {}
+  ngOnInit(): void {
 
-  public imgUrl  = "https://trello.com/1/cards/64877d7c1e4cd03df42a9ddb/attachments/654167973dda1475ab6bd28a/download/image.png"
-
-  @Input() public getItems: string[] = []
-
-
-  public delete(item: any)
-  {
-    const index = this.getItems.indexOf(item)
-
-    if(index !== item)
+    console.log(this.checkState);
+        
+    this.getItems.forEach((item, index) => 
     {
-      this.getItems.splice(index,1);
+     if(this.checkState.includes(item))
+     {
+      console.log(this.checkState.includes(item))
+      console.log(item, index);  
+      const element = document.getElementById('secondElement'+ index) 
+      if(element)
+      {
+        element.classList.add('task-done')
+      }   
+     }
+    })
+  }
+
+  public imgUrl =
+    'https://trello.com/1/cards/64877d7c1e4cd03df42a9ddb/attachments/654167973dda1475ab6bd28a/download/image.png';
+
+  @Input() public getItems: string[] = [];
+
+  public checkState: any = JSON.parse(localStorage.getItem('newArr'));
+
+  public newArr: any = [];
+
+  public verify: any;
+
+  public opa(index: any)
+  {
+    console.log(index);
+    
+  }
+
+  public delete(item: any) {
+    const index = this.getItems.indexOf(item);
+
+    if (index !== item) {
+      this.getItems.splice(index, 1);
+      localStorage.setItem('todoList', JSON.stringify(this.getItems));
     }
   }
 
-  public checked(element: HTMLInputElement, secondElement: HTMLElement, index: any)
-  {
-    if(element.checked)
-    {
-      secondElement.style.textDecorationLine = "line-through"
-      this.getItems.push(this.getItems.splice(index,1)[0])
+  public checked(element: any, index: any) {
 
-    }else{
-      secondElement.style.textDecorationLine = "none"
+    const secondElement = document.getElementById('secondElement' + index);
+
+    if (element.checked) {
+      secondElement.classList.add('task-done')
+
+      this.getItems.push(this.getItems.splice(index, 1)[0]);
+
+      localStorage.setItem('todoList', JSON.stringify(this.getItems));
+
+      this.getItems.forEach((item, index) => {
+        if (index === this.getItems.length - 1) {
+          console.log(item);
+          this.newArr.push(item);
+          console.log(this.newArr);
+          localStorage.setItem('newArr', JSON.stringify(this.newArr));
+        }
+      });
+    } else {
+      secondElement.classList.remove('task-done')  
     }
   }
 }

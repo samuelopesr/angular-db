@@ -2,7 +2,8 @@
     <!-- <img [src]="imgUrl" width=20%> -->
     <li *ngFor="let i of getItems; let pi = index">
         ({{pi}})
-        <input #check (click)="checked(check, secondElement, pi)" type="checkbox"> <span #secondElement>{{ i }}</span>
+        <input #check id="check" [checked]="checkState.includes(i)" (change)="checked(check, pi)" type="checkbox"> 
+        <span [class.task-done]="checkState.includes(i)" [id]="'secondElement' + pi" #secondElement>{{ i }}</span>
 
         <mat-icon 
         (click)="delete(pi)"

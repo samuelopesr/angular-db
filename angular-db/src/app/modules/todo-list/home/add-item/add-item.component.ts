@@ -12,7 +12,8 @@ export class AddItemComponent {
 
   public method(item: string) {
     this.item.emit(item)
-    console.log(this.item);    
+    console.log(this.item);
+        
     this.todoItem = ""
   }
 }
