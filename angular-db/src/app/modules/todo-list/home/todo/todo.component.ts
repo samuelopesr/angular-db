@@ -52,27 +52,15 @@ export class TodoComponent implements OnInit, DoCheck {
     }
   }
 
-  public checked(element: any, index: any) {
+  public checked(element: HTMLInputElement, secondElement: HTMLElement, index: any)
+  {
+    if(element.checked)
+    {
+      secondElement.style.textDecorationLine = "line-through"
+      this.getItems.push(this.getItems.splice(index,1)[0])
 
-    const secondElement = document.getElementById('secondElement' + index);
-
-    if (element.checked) {
-      secondElement.classList.add('task-done')
-
-      this.getItems.push(this.getItems.splice(index, 1)[0]);
-
-      localStorage.setItem('todoList', JSON.stringify(this.getItems));
-
-      this.getItems.forEach((item, index) => {
-        if (index === this.getItems.length - 1) {
-          console.log(item);
-          this.newArr.push(item);
-          console.log(this.newArr);
-          localStorage.setItem('newArr', JSON.stringify(this.newArr));
-        }
-      });
-    } else {
-      secondElement.classList.remove('task-done')  
+    }else{
+      secondElement.style.textDecorationLine = "none"
     }
   }
 }
