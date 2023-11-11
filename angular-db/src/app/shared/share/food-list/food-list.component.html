@@ -1,3 +1,19 @@
 <li *ngFor="let i of foodList">
     {{i}}
 </li>
+
+<div *ngFor="let item of newl">
+
+    <h1> {{item.titulo}} </h1>
+    <!-- <ul *ngFor="let o of porc">
+        <li>{{o}}</li>
+    </ul> -->
+
+    <ul>
+        <li *ngFor="let p of item.porcents"> {{p}} </li>
+    </ul>
+    <h2> {{item.final}} </h2> 
+</div>
+
+
+
